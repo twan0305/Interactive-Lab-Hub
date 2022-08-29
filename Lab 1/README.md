@@ -86,9 +86,12 @@ Storyboards are a tool for visually exploring a users interaction with a device.
 Try physically acting out the interaction you planned. For now, you can just pretend the device is doing the things you’ve scripted for it. 
 
 \*\***Are there things that seemed better on paper than acted out?**\*\*
+
   Yes, facial recognition can be quite finicky and not always pick up subtle facial expressions. 
 
 \*\***Are there new ideas that occur to you or your collaborators that come up from the acting?**\*\*
+
+  Yes, for new itereations, we can include audio (music output) based on preset playlists depending on different moods. 
 
 
 ## Part C. Prototype the device
