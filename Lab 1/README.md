@@ -67,8 +67,6 @@ _Activity:_ Imagine the user is a manager having a rough day at work. The device
 
 _Goals:_ The goal of the user is to appropriately signal to others whether or not it is a good time to enter. 
 
-Storyboards are a tool for visually exploring a users interaction with a device. They are a fast and cheap method to understand user flow, and iterate on a design before attempting to build on it. Take some time to read through this explanation of [storyboarding in UX design](https://www.smashingmagazine.com/2017/10/storyboarding-ux-design/). Sketch seven storyboards of the interactions you are planning. **It does not need to be perfect**, but must get across the behavior of the interactive device and the other characters in the scene. 
-
 \*\***Include pictures of your storyboards here**\*\*
 
 ![Mpath Storyboard](https://user-images.githubusercontent.com/111993874/187286818-778fd870-329e-4182-be2f-722d69c9636d.jpg)
@@ -77,8 +75,8 @@ Storyboards are a tool for visually exploring a users interaction with a device.
 
 \*\***Summarize feedback you got here.**\*\*
 
-  1. Costs for facial recognition device may deter consumers from purchasing. Users can opt for a switch like option.
-  2. Would like to see an option to change the entire room's lighting to help improve mood. 
+**  1. Costs for facial recognition device may deter consumers from purchasing. Users can opt for a switch like option.
+  2. Would like to see an option to change the entire room's lighting to help improve mood. **
 
 
 ## Part B. Act out the Interaction
@@ -87,11 +85,11 @@ Try physically acting out the interaction you planned. For now, you can just pre
 
 \*\***Are there things that seemed better on paper than acted out?**\*\*
 
-  Yes, facial recognition can be quite finicky and not always pick up subtle facial expressions. 
+  **Yes, facial recognition can be quite finicky and not always pick up subtle facial expressions. **
 
 \*\***Are there new ideas that occur to you or your collaborators that come up from the acting?**\*\*
 
-  Yes, for new itereations, we can include audio (music output) based on preset playlists depending on different moods. 
+  **Yes, for new itereations, we can include audio (music output) based on preset playlists depending on different moods. 
 
 
 ## Part C. Prototype the device
