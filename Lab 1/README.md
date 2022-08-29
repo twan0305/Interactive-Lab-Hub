@@ -75,8 +75,8 @@ _Goals:_ The goal of the user is to appropriately signal to others whether or no
 
 \*\***Summarize feedback you got here.**\*\*
 
-**  1. Costs for facial recognition device may deter consumers from purchasing. Users can opt for a switch like option.
-  2. Would like to see an option to change the entire room's lighting to help improve mood. **
+1. Costs for facial recognition device may deter consumers from purchasing. Users can opt for a switch like option.
+2. Would like to see an option to change the entire room's lighting to help improve mood.
 
 
 ## Part B. Act out the Interaction
