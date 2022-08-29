@@ -135,12 +135,12 @@ Think about the setting of the device: is the environment a place where the devi
 \*\***Please indicate anyone you collaborated with on this Lab.**\*\*
 Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
 
+Ravi for his coding expertise. Antoine for his feedback. 
 
 
 # Staging Interaction, Part 2 
 
 This describes the second week's work for this lab activity.
-
 
 ## Prep (to be done before Lab on Wednesday)
 
