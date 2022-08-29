@@ -59,13 +59,13 @@ Labs are due on Mondays. Make sure this page is linked to on your main class hub
 
 To stage an interaction with your interactive device, think about:
 
-_Setting:_ Where is this interaction happening? (e.g., a jungle, the kitchen) When is it happening?
+_Setting:_ The interaction with the device would be in an office setting. The interactive device is capable of facial recognition, primarily emotions. When the user is upset, it would display a red light signaling others to not disturb the person. When the user is happy, it would display a green light signaling others that it is okay to come in.
 
-_Players:_ Who is involved in the interaction? Who else is there? If you reflect on the design of current day interactive devices like the Amazon Alexa, it’s clear they didn’t take into account people who had roommates, or the presence of children. Think through all the people who are in the setting.
+_Players:_ The user is the primary person to interact with the device, while the light signals are there for everyone else considering to walk into the users office
 
-_Activity:_ What is happening between the actors?
+_Activity:_ Imagine the user is a manager having a rough day at work. The device would recognize the sad facial expression and display a red light signaling to others that it is not a great time to be disturbed. On the other end of the spectrum, the manager is very happy and the device recognizes a happy facial expression and displays a green light, indicating that it is a good time to come in. 
 
-_Goals:_ What are the goals of each player? (e.g., jumping to a tree, opening the fridge). 
+_Goals:_ The goal of the user is to appropriately signal to others whether or not it is a good time to enter. 
 
 The interactive device can be anything *except* a computer, a tablet computer or a smart phone, but the main way it interacts needs to be using light.
 
