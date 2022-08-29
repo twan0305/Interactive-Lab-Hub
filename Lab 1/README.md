@@ -57,7 +57,7 @@ Labs are due on Mondays. Make sure this page is linked to on your main class hub
 
 ## Part A. Plan 
 
-To stage an interaction with your interactive device, think about:
+The interactive device can be anything *except* a computer, a tablet computer or a smart phone, but the main way it interacts needs to be using light.
 
 _Setting:_ The interaction with the device would be in an office setting. The interactive device is capable of facial recognition, primarily emotions. When the user is upset, it would display a red light signaling others to not disturb the person. When the user is happy, it would display a green light signaling others that it is okay to come in.
 
@@ -67,10 +67,6 @@ _Activity:_ Imagine the user is a manager having a rough day at work. The device
 
 _Goals:_ The goal of the user is to appropriately signal to others whether or not it is a good time to enter. 
 
-The interactive device can be anything *except* a computer, a tablet computer or a smart phone, but the main way it interacts needs to be using light.
-
-\*\***Describe your setting, players, activity and goals here.**\*\*
-
 Storyboards are a tool for visually exploring a users interaction with a device. They are a fast and cheap method to understand user flow, and iterate on a design before attempting to build on it. Take some time to read through this explanation of [storyboarding in UX design](https://www.smashingmagazine.com/2017/10/storyboarding-ux-design/). Sketch seven storyboards of the interactions you are planning. **It does not need to be perfect**, but must get across the behavior of the interactive device and the other characters in the scene. 
 
 \*\***Include pictures of your storyboards here**\*\*
@@ -79,12 +75,16 @@ Present your ideas to the other people in your breakout room (or in small groups
 
 \*\***Summarize feedback you got here.**\*\*
 
+  1. Costs for facial recognition device may deter consumers from purchasing. Users can opt for a switch like option.
+  2. Would like to see an option to change the entire room's lighting to help improve mood. 
+
 
 ## Part B. Act out the Interaction
 
 Try physically acting out the interaction you planned. For now, you can just pretend the device is doing the things you’ve scripted for it. 
 
 \*\***Are there things that seemed better on paper than acted out?**\*\*
+  Yes, facial recognition can be quite finicky and not always pick up subtle facial expressions. 
 
 \*\***Are there new ideas that occur to you or your collaborators that come up from the acting?**\*\*
 
