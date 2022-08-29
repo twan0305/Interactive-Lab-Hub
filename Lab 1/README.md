@@ -71,7 +71,8 @@ Storyboards are a tool for visually exploring a users interaction with a device.
 
 \*\***Include pictures of your storyboards here**\*\*
 
-![Mpath Storyboard](https://user-images.githubusercontent.com/111993874/187286215-e286fefc-7839-494f-8aa9-26d2526163d0.jpg)
+![Mpath Storyboard](https://user-images.githubusercontent.com/111993874/187286818-778fd870-329e-4182-be2f-722d69c9636d.jpg)
+
 
 
 \*\***Summarize feedback you got here.**\*\*
