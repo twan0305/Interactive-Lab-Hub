@@ -126,7 +126,13 @@ Think about the setting of the device: is the environment a place where the devi
 
 \*\***Include sketches of what your devices might look like here.**\*\*
 
+![Untitled Notebook (5)-5](https://user-images.githubusercontent.com/111993874/187345097-23142e7d-a340-44f7-867e-451cdcf7972e.jpg)
+![Untitled Notebook (5)-6](https://user-images.githubusercontent.com/111993874/187345111-a70b620e-6bec-4404-931e-0ea34b240fc7.jpg)
+![Untitled Notebook (5)-7](https://user-images.githubusercontent.com/111993874/187345117-4be05227-f7a2-4942-af40-3c894e9827ef.jpg)
+
 \*\***What concerns or opportunitities are influencing the way you've designed the device to look?**\*\*
+
+Since camera is required for facial recognition, privacy issues can be of concern. In the office setting, it would be easier to seamlessly incorporate into existing decor. As for the home setting, there is already a high rate of adoption for Amazon and Google home devices. Incorporating our prototype into familiar products would be quite easy. 
 
 
 ## Part F. Record
