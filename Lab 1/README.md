@@ -1,5 +1,5 @@
 
-Lab #1 was a colloboration between Ravi Niteesh and Tony Wan
+Lab #1 was a collaboration between Ravi Niteesh and Tony Wan
 
 # Staging Interaction
 
