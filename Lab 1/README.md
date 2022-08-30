@@ -131,10 +131,21 @@ Think about the setting of the device: is the environment a place where the devi
 
 \*\***Take a video of your prototyped interaction.**\*\*
 
-\*\***Please indicate anyone you collaborated with on this Lab.**\*\*
-Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
+The Angry Manager: https://drive.google.com/file/d/1uUxWAj3-BHX6YE9QFtZRLEMoAYM3MGYz/view?usp=sharing
 
-Ravi for his coding expertise. Antoine for his feedback. 
+The Sad Manager: https://drive.google.com/file/d/14lmi8b9GkfV6-_ogH7Dc5enn0I35B8OA/view?usp=sharing
+
+The Happy Manager: https://drive.google.com/file/d/13-JQ0NVM-HHrpMXMwooOt0wpCd7CRWoR/view?usp=sharing
+
+Prototype Demonstration: https://drive.google.com/file/d/1UhUJWy-o_MBNUYZ-7xIUqbOQHMj1T59p/view?usp=sharing
+
+
+\*\***Please indicate anyone you collaborated with on this Lab.**\*\*
+
+
+Ravi Niteesh for his coding expertise. Antoine St. Victor for his feedback. Nishita Hedge for her artistic storyboard. Rohit George for being a great cameraman.  
+
+GitHub and StackOverFlow were used for coding resources. 
 
 
 # Staging Interaction, Part 2 
