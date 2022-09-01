@@ -1,3 +1,3 @@
-pip3 install pyopenssl
-if you face an issue with npm install, rename the folders in the path to ensure there are no spaces
-incase you face privacy issues on chrome , please type "this is unsafe"
+-install openssl, pip3 install pyopenssl
+-run npm install,if you face an issue with npm install, rename the folders in the path to ensure there are no spaces
+-incase you face privacy issues on chrome , please type "thisisunsafe"
