@@ -1,9 +1,58 @@
 let model, streamvideo, streamctx, ctx, videoWidth, videoHeight, video, canvas, facecanvas, facectx, image;
 let article, message;
+let prevUtterance=null
 let current = new Date();
 let delay=2000;
 let update = 0;
 const updateInt = 30;
+var iOSVoiceNames = [
+  'Maged',
+  'Zuzana',
+  'Sara',
+  'Anna',
+  'Melina',
+  'Karen',
+  'Samantha',
+  'Daniel',
+  'Rishi',
+  'Moira',
+  'Tessa',
+  'Mónica',
+  'Paulina',
+  'Satu',
+  'Amélie',
+  'Thomas',
+  'Carmit',
+  'Lekha',
+  'Mariska',
+  'Damayanti',
+  'Alice',
+  'Kyoko',
+  'Yuna',
+  'Ellen',
+  'Xander',
+  'Nora',
+  'Zosia',
+  'Luciana',
+  'Joana',
+  'Ioana',
+  'Milena',
+  'Laura',
+  'Alva',
+  'Kanya',
+  'Yelda',
+  'Tian-Tian',
+  'Sin-Ji',
+  'Mei-Jia'
+]
+var hasWindow = typeof window === 'object' && window !== null && window.self === window && window.navigator !== null;
+var speech = window.speechSynthesis;
+var voices=null;
+var msg = new SpeechSynthesisUtterance('No warning should arise');
+      msg.lang= 'en-US'
+      msg.volume=1;
+      msg.rate=1;
+      msg.pitch=1;
   let socket=io();
 window.mobileCheck = function() {
   let check = false;
@@ -69,7 +118,9 @@ async function setFrameColor(tensor) {
   if(typeof color !== "undefined"){
     article.classList.add(color);
   }
-  
+  //var msg = new SpeechSynthesisUtterance();
+    //  msg.text = disp;
+     // window.speechSynthesis.speak(msg);
   socket.emit('emotion', {emotion:disp,color:bgcolor});
   //document.body.style.backgroundColor ='brown'
   delete tensor1d
@@ -223,17 +274,53 @@ async function classify(img) {
   
   return res;
 }
+function setSpeech() {
+  return new Promise(
+      function (resolve, reject) {
+          let synth = window.speechSynthesis;
+          let id;
+
+          id = setInterval(() => {
+              if (synth.getVoices().length !== 0) {
+                  resolve(synth.getVoices());
+                  clearInterval(id);
+              }
+          }, 10);
+      }
+  )
+}
+
+async function init(){
+//Load all the voices, load the page after the voices are loaded
+  var _voices=setSpeech();
+
+  _voices.then((data) => {
+    voices=data;
+    preload();
+  }); 
+}
 
 async function preload(){
+  //Attach click event on the button
+  document.getElementById('speech').addEventListener('click', function(e) {
+    msg.voiceURI=voices[0].voiceURI;
+    msg.text=document.getElementById('emotionText').innerHTML;
+    window.speechSynthesis.speak(msg);
+  });
+  //establish socket connection
   socket.on('connect', () => {
     console.log("socket is connected")
-    socket.on('emotion', (val) => {document.body.style.backgroundColor=val.color;document.getElementById('emotionText').innerHTML = val.emotion})
-   // socket.on('emotion', (val) => {document.body.style.backgroundColor='green';document.getElementById('emotionText').innerHTML = 'happy'})
-    //document.getElementById('mobile').innerHTML = val}
+    socket.on('emotion', (val) => {
+      document.getElementById('speech').click();
+      document.body.style.backgroundColor=val.color;document.getElementById('emotionText').innerHTML = val.emotion;
+    })
+
     socket.onAny((event, ...args) => {
-     console.log(event, args);
+     console.log(event, args);  
     });
    });
+
+   // initially hide the UI, based on the device show the corresponding ui
 const isMobile = window.mobileCheck();
 console.log("device is mobile:"+isMobile);
 if(isMobile){
@@ -248,4 +335,4 @@ else{
 
 }
 
-preload();
+init();
