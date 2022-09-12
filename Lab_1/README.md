@@ -165,6 +165,8 @@ This describes the second week's work for this lab activity.
 \*\***Summarize feedback from your partners here.**\*\*
 
 Based on the feedback from our classmates, we added an audio output with verbal reply as well as music depending on the emotional response when interacting with the device. One feedback noted that some employees may forget to look at the device, so we added a step in which the employee interacts with the device to get a sense of the mood the manager is in. Another suggested that we include audio feedback of the emotion, so we added specific responses similar to what a secretary may say when someone wants to speak with the manager. 
+
+Some concerns would definitely include privacy issues. However, we can try to mitigate this with only local access only. 
 ## Make it your own
 
 Do last week’s assignment again, but this time: 
