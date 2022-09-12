@@ -164,6 +164,7 @@ This describes the second week's work for this lab activity.
 
 \*\***Summarize feedback from your partners here.**\*\*
 
+Based on the feedback from our classmates, we added an audio output with verbal reply as well as music depending on the emotional response when interacting with the device. One feedback noted that some employees may forget to look at the device, so we added a step in which the employee interacts with the device to get a sense of the mood the manager is in. Another suggested that we include audio feedback of the emotion, so we added specific responses similar to what a secretary may say when someone wants to speak with the manager. 
 ## Make it your own
 
 Do last week’s assignment again, but this time: 
@@ -172,8 +173,6 @@ Do last week’s assignment again, but this time:
 3) We will be grading with an emphasis on creativity. 
 
 \*\***Document everything here. (Particularly, we would like to see the storyboard and video, although photos of the prototype are also great.)**\*\*
-
-Based on the feedback from our classmates, we added an audio output with verbal reply as well as music depending on the emotional response when interacting with the device. One feedback noted that some employees may forget to look at the device, so we added a step in which the employee interacts with the device to get a sense of the mood the manager is in. Another suggested that we include audio feedback of the emotion, so we added specific responses similar to what a secretary may say when someone wants to speak with the manager. 
 
 <img width="1340" alt="Mpath angry 2" src="https://user-images.githubusercontent.com/111993874/189565847-7a5a3d62-fb55-4a79-80b3-2385abd090e8.png">
 <img width="1309" alt="Mpath happy 2" src="https://user-images.githubusercontent.com/111993874/189565857-904414d6-2ddf-4606-88f3-f9bdc8d5a375.png">
