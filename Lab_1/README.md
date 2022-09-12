@@ -1,5 +1,5 @@
 
-Lab #1 was a collaboration between Ravi Niteesh (Technical Director) and Tony Wan (Creative Director)
+Lab #1 was a collaboration between Ravi Niteesh Voleti (Technical Director) and Tony Wan (Creative Director)
 
 # Staging Interaction
 
