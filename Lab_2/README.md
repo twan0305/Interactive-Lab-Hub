@@ -1,3 +1,6 @@
+# Contributors
+1. Ravi Niteesh Voleti
+2. Tony Wan
 # Interactive Prototyping: The Clock of Pi
 
 Does it feel like time is moving strangely during this semester?
@@ -205,11 +208,83 @@ After that, Git will ask you to login to your GitHub account to push the updates
 ## Part F. 
 ## Make a short video of your modified barebones PiClock
 
+Word clocks are an interesting way to display the time, because they use a clever grid of letters to convert time into words instead of conventional numeric digits. So, for example, if the time is 11:55 am ,it might say “IT IS FIVE MINUTES TO PM TWELVE.” For obvious reasons, that’s more complex then simply showing some numbers. 
+
+#Under the Hood
+ STEP 1: INIT
+ We first create a 2D array of the letters and leverage the grid system to identify the letters. We call it the "Master Letter Grid"
+ 
+ ```
+   0 1 2 3 4 5 6 7 8 9 10 11 12
+0  I T R I S U H A L F  T  E  N
+1  Q U A R T E R T W E  N  T  Y
+2  F I V E Q M I N U T  E  S  T
+3  P A S T M T O S A M  O  P  M
+4  O N E N T W O Z T H  R  E  E
+5  F O U R F I V E S E  V  E  N
+6  S I X E I G H T Y N  I  N  E
+7  T E N E L E V E N P  H  I  L
+8  T W E L V E L O C L  O  C  K
+ ```
+ For example, if we want to refer the word "IT IS", we would choose (0,0) for I, (0,1) for T , (0,3) for I and (0,4) for S.
+ 
+STEP 2: CONVERT TEXT TO STRING
+We extract hours, minutes, am or pm from time and convert them into letters in the array. The minutes are rounded to their near 5th,10th, 15th, 20th , 25th or 30 minute.
+  - Until the 33 minute, time is converted reltive to the current hour. From 33rd minute, it is converted relative to the next hour. For example, if the time is 2:17, it would be rendered as "Fifteen Minutes Past PM TWO". If the time is 3:55, it would be rendered as "IT IS FIVE MINUTES TO PM 4".
+  - For the first 3 minutes or the last 3 minutes of the hour, the time hour would be appended with the word "OCLOCK". For example: if the time is 4:02 pm, it is represented as "IT IS PM FOUR OCLOCK". The corresponding letters to the time is pushed into a separate array. We call it the "Array To Print"
+
+STEP 3: DISPLAY:
+Display is rendered in a two staged process. For example, the time is "4:20pm"
+
+  Stage 1: For every tick we render the "Master Letter Array" in white color 
+   ```
+   0 1 2 3 4 5 6 7 8 9 10 11 12
+0  I T R I S U H A L F  T  E  N
+1  Q U A R T E R T W E  N  T  Y
+2  F I V E Q M I N U T  E  S  T
+3  P A S T M T O S A M  O  P  M
+4  O N E N T W O Z T H  R  E  E
+5  F O U R F I V E S E  V  E  N
+6  S I X E I G H T Y N  I  N  E
+7  T E N E L E V E N P  H  I  L
+8  T W E L V E L O C L  O  C  K
+ ```
+  
+  Stage 2: Then we superimpose the the "Array To Print" in red color. The overlapping will create the affect.
+
+ ```diff
+-    0 1 2 3 4 5 6 7 8 9 10 11 12
+- 0  I T   I S                   
+- 1                T W E  N  T  Y
+- 2            M I N U T  E  S   
+- 3  P A S T                 P  M
+- 4                              
+- 5  F O U R                     
+- 6                              
+- 7                              
+- 8                              
+ ```
+ Final result is
+ 
+ ![IMG_7334](https://user-images.githubusercontent.com/111998430/189753330-017f5581-9fd8-43ee-b260-5b7e0d02be18.jpg)
+
+Few examples of how time is shown
+
+EXAMPLE 1: when the time is 3:35 pm
+![IMG_7330](https://user-images.githubusercontent.com/111998430/189756220-b6146350-4b3f-48a2-9f49-6ff4de936d80.jpg)
+
+EXAMPLE 2: when the time is 4 pm
+![IMG_7333](https://user-images.githubusercontent.com/111998430/189756575-731e3216-633a-4650-9f3e-de6bd91a73c3.jpg)
+
+Here is the Video of our clock: https://drive.google.com/file/d/1eYPh8WvP0N6_Vf61NNlKcQ_PHiRWDX21/view?usp=sharing
+ 
 \*\*\***Take a video of your PiClock.**\*\*\*
 
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
-
+ To ehance this capability further 
+ - we want to integrate a button click to change the color of the letters that represent time(on every click a color is chosen from a range of colors).
+ - We want to integrate a button click to the change the base color of the letters that do not represent the time (on every click a color is chosen from a range of colors).
 
 # Prep for Part 2
 
@@ -227,5 +302,4 @@ Modify the code from last week's lab to make a new visual interface for your new
 As always, make sure you document contributions and ideas from others explicitly in your writeup.
 
 You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab. What each person did should be explicitly documented. Make sure the page for the group turn in is linked to your Interactive Lab Hub page. 
-
 
