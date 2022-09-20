@@ -1,6 +1,6 @@
 # Contributors
-1. Ravi Niteesh Voleti
-2. Tony Wan
+1. Ravi Niteesh Voleti(rv279)
+2. Tony Wan(tw482)
 # Interactive Prototyping: The Clock of Pi
 
 Does it feel like time is moving strangely during this semester?
@@ -302,4 +302,39 @@ Modify the code from last week's lab to make a new visual interface for your new
 As always, make sure you document contributions and ideas from others explicitly in your writeup.
 
 You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab. What each person did should be explicitly documented. Make sure the page for the group turn in is linked to your Interactive Lab Hub page. 
+
+Gist of the Feedback we received
+1. Ability to customize colors
+2. Color combinations to be  conteasting
+3. ability to remove background letters and only see the time in letters
+
+# Our Approach for incorporating the above feedback
+
+1. We wanted to have a user interaction to let them choose different color combinations based on click on Button B - Tony and Ravi
+2. The color combinations that show up needs to contrasting so that user can easily read - Tony
+
+Tony decided to come up with a logic so that the color combination generated is always contrasting.
+  - First, we generate a 6 random characters from ```0123456789ABCDEF``` and append them with ```#``` to generate a color
+  - Second, we make sure a color is selected from the opp side of the color wheel. To achieve this , we subtract the generated color from ```0xffffff```
+  
+![Comp _horizontal (1)](https://user-images.githubusercontent.com/111998430/191116544-2bb860ac-e206-4e7b-a24e-6b1109fe39b1.jpg)
+ Pic Credits: https://copic.too.com/blogs/educational/analogous-complimentary-and-split-complementary-color-schemes
+ 
+3. On click of button A we only render the "Array To Print" and do not render the "Master Letter Array", persisting the color selection previously made
+
+
+# Recording of our Lab
+
+https://user-images.githubusercontent.com/111998430/191161713-2de91b91-9303-4c52-ae8d-a58829397a3c.mp4
+
+# User Testing 
+User 1: Yongky Arief Kristando <yak6@cornell.edu>
+
+https://user-images.githubusercontent.com/111998430/191157541-d08a9f72-3067-42cc-8d1b-2b36194dee42.mp4
+
+User 2: Rohit George <rg645@cornell.edu>
+
+https://user-images.githubusercontent.com/111998430/191160661-3df3a3b5-fa65-4a79-856a-11a692086a18.mp4
+
+
 
