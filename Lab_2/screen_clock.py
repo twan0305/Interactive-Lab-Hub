@@ -6,9 +6,14 @@ import copy
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
 from time import strftime
+import random
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
 cs_pin = digitalio.DigitalInOut(board.CE0)
 dc_pin = digitalio.DigitalInOut(board.D25)
+buttonA = digitalio.DigitalInOut(board.D23)
+buttonB = digitalio.DigitalInOut(board.D24)
+buttonA.switch_to_input()
+buttonB.switch_to_input()
 reset_pin = None
 
 # Config for display baudrate (default max is 24mhz):
@@ -87,6 +92,12 @@ letters_blank = [
             [' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '],
         ]
 
+#Colors
+disablebackgroundletter=False
+number_of_colors = 128
+START_CHAR='#'
+back_text_color="#FFFFFF"
+fore_text_color="#FF0000"
 
 def update_time():
         #array_to_print=deepcopy(letters_blank)
@@ -153,6 +164,17 @@ def translate_hour(hour, minute):
         else:
             return hours[hour - 1]
 
+def get_random_color():
+        color = START_CHAR+''.join([random.choice('0123456789ABCDEF') for j in range(6)])
+        #print(color)
+        return color
+
+def get_contrast_color(colour):
+        rgb = int(colour.lstrip('#'), 16)
+        complementary_colour = 0xffffff-rgb
+        #print(f'{START_CHAR}{complementary_colour:06X}')
+        return f'{START_CHAR}{complementary_colour:06X}'
+
 def translate_time(hour, minute, am_or_pm):
         letters = [
             [0,0], [0,1], [0,3], [0,4] # IT IS
@@ -180,19 +202,31 @@ while True:
     #draw_weather()
     array_to_print=update_time()
     index = 0
+    get_contrast_color(get_random_color())
+    if buttonA.value==True:
+        #print("value of button B is",buttonB.value)
+        disablebackgroundletter=False
+    else:
+        disablebackgroundletter=True
+
+    if buttonB.value==False:
+        back_text_color=get_random_color()
+        fore_text_color=get_contrast_color(back_text_color)
     while index < len(array_to_print):
-         _str1=" ".join(letters[index])
-         draw.text((x,y),_str1,font=font,fill="#FFFFFF")
-         x=0
-         _str=" ".join(array_to_print[index])
-         draw.text((x,y),_str,font=font,fill="#FF0000")
-         #print("orig:",font.getsize(_str1)[0])
-         #print("print:",font.getsize(_str)[0])
-         y += font.getsize(_str1)[1]
-         index += 1
+        if disablebackgroundletter==False:
+            _str1=" ".join(letters[index])
+            #print("back is: "+back_text_color)
+            draw.text((x,y),_str1,font=font,fill=back_text_color)
+        x=0
+        _str=" ".join(array_to_print[index])
+        draw.text((x,y),_str,font=font,fill=fore_text_color)
+        #print("text is: "+fore_text_color)
+        y += font.getsize(_str)[1]
+        index += 1
     y=top
 
     # Display image.
     disp.image(image, rotation)
     #disp.image(weather)
     time.sleep(1)    
+
