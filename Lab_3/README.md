@@ -158,11 +158,20 @@ In the [demo directory](./demo), you will find an example Wizard of Oz project. 
 
 For Part 2, you will redesign the interaction with the speech-enabled device using the data collected, as well as feedback from part 1.
 
+
 ## Prep for Part 2
 
 1. What are concrete things that could use improvement in the design of your device? For example: wording, timing, anticipation of misunderstandings...
 2. What are other modes of interaction _beyond speech_ that you might also use to clarify how to interact?
 3. Make a new storyboard, diagram and/or script based on these reflections.
+
+# Feedback received
+
+
+Yusef Iskandar 
+
+* ```Well done, Ravi. I like the idea and the execution. Would be nice, if you could let the shape move at a constant speed and then give your command.```
+
 
 ## Prototype your system
 
@@ -173,25 +182,181 @@ The system should:
 
 *Document how the system works*
 
+<img width="1177" alt="Flowchart" src="https://user-images.githubusercontent.com/111998430/193675127-e31fc4a6-61dd-4df9-a6e0-d2cb9966acd8.png">
+
+# Step 1: Variable Declaration
+Board_size, Movements, display are initialized and the game is started
+Pieces in the tetris puzzle is defined as below
+```MyText``` holds the move converted from audio. initially is set to null.
+PIECES = [
+
+    [[1], [1], [1], [1]],  # ****
+
+    [[1, 0],               # *
+     [1, 0],               # *
+     [1, 1]],              # **
+
+    [[0, 1],               #  *
+     [0, 1],               #  *
+     [1, 1]],              # **
+
+    [[0, 1],               # *
+     [1, 1],               #**
+     [1, 0]],              #*
+
+    [[1, 1],               #**
+     [1, 1]]               #**
+]
+
+Pieces are sub arrays where 1 represents a * and 0 represents space. Through series of spaces and stars a piece is generated.
+# Step 2: Board Initialization
+ ```init_board()``` first generates the board array from the board size. Effective board size is also calculated to ensure space occupied by the boundaries of the game area is calculated
+
+# Step 3: Piece generation and placement
+
+a piece is generated randomly generated from ```PIECES``` array. this is done through ```get_random_piece()``` function. Once a piece is generated, it has to be placed in a specific position.
+
+```get_random_position(curr_piece)``` , In this a position for x and y are determined. X is always 0 as a piece starts from the top.
+```y = random.randrange(1, EFF_BOARD_SIZE-curr_piece_size)``` a random number from 1 to effective board size (including the boundaries) is generated.
+The x and y pair is returned.
+
+# Step 4: Print the Board
+
+once board and piece are ready, the board is printed. Sample image of how the board is printed.
+
+<img width="231" alt="image" src="https://user-images.githubusercontent.com/111998430/193678683-a4fecf97-c2ca-45d4-aa87-c011baf8585a.png">
+
+# Step 5: Init Microphone
+A microphone is initialized and is running in the background(on a new thread) to capture a move. Everytime the microphone captures a sound it asynchronously updates the ```MyText``` .
+
+# Step 6: Make the move based on the action.
+
+a Gobal variable ```MyText``` always holds the current move which is converted from the audio. If the user does not speak, it automatically checks if the piece can move downwards and moves the piece. If a valid move is recognized, game checks if the move is feasible and performs the move. Once the move is done is checks if the piece can go down and moves the piece downwards.
+
+```
+if MyText=='left':
+            if can_move_left(board, curr_piece, piece_pos):
+                piece_pos = get_left_move(piece_pos)
+                do_move_down = True
+                MyText="null"
+
+            else:
+                ERR_MSG = "Cannot move left!"
+        elif MyText=='right':
+            if can_move_right(board, curr_piece, piece_pos):
+                piece_pos = get_right_move(piece_pos)
+                do_move_down = True
+                MyText="null"
+            else:
+                ERR_MSG = "Cannot move right!"
+        elif MyText=='anti':
+            if can_rotate_anticlockwise(board, curr_piece, piece_pos):
+                curr_piece = rotate_anticlockwise(curr_piece)
+                do_move_down = True
+                MyText="null"
+            else:
+                ERR_MSG = "Cannot rotate anti-clockwise !"
+        elif MyText=='rotate':
+            if can_rotate_clockwise(board, curr_piece, piece_pos):
+                curr_piece = rotate_clockwise(curr_piece)
+                do_move_down = True
+                MyText="null"
+            else:
+                ERR_MSG = "Cannot rotate clockwise!"
+        elif MyText=='go':
+            do_move_down = True
+            MyText="null"
+        elif MyText=='quit':
+            print("Bye. Thank you for playing!")
+            sys.exit(0)
+        else:
+            ERR_MSG = "That is not a valid move!"
+        if  can_move_down(board, curr_piece, piece_pos):
+            piece_pos = get_down_move(piece_pos)
+```
+
+
+Feedback suggested is incorporated in the below lines of code.
+```
+if  can_move_down(board, curr_piece, piece_pos):
+            piece_pos = get_down_move(piece_pos)
+```
+            
+Rotation is a key implementation, the game offers clockwise and anti clockwise implementation
+
+CLOCKWISE Implementation
+
+```
+piece_copy = deepcopy(piece)
+    reverse_piece = piece_copy[::-1]
+    return list(list(elem) for elem in zip(*reverse_piece))
+```
+Example:
+```
+  *              *
+  *    ===>  * * *
+  **
+ ```
+ANTICLOCKWISE Implementation
+```
+piece_copy = deepcopy(piece)
+    # Rotating clockwise thrice will be same as rotating anticlockwise :)
+    piece_1 = rotate_clockwise(piece_copy)
+    piece_2 = rotate_clockwise(piece_1)
+    return rotate_clockwise(piece_2)
+```
+
+Example:
+```
+  *              *         * *       * * *
+  *    ===>  * * *   ===>    * ===>  *
+  **                         *
+             Clock        Clock      Clock
+             wise 1       wise 2     wise 3
+ ```
+# Step 7: Continue with the loop
+
+Continue the process until the game is over of user says quit.
+
+
+
 *Include videos or screencaptures of both the system and the controller.*
+
+# Video of game without user's voice
+
+
+https://user-images.githubusercontent.com/111998430/193690328-3125c278-1076-42dc-a77b-7515d4158a96.MOV
+
+# Video with the users interaction
+
+
+https://user-images.githubusercontent.com/111998430/193691427-0c8ac9fd-adea-4207-b900-5b69d7d1b25f.mp4
+
 
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
 
+# User 1: Krishna Venkata
+
+https://user-images.githubusercontent.com/111998430/193699222-cb6c375b-d342-4db2-801e-5b9c231607e1.mp4
+
+# User 2: Sneha Suresh
+
+
+https://user-images.githubusercontent.com/111998430/193708939-dc6e0eee-6ad8-4c44-90c1-21be8a414c5a.mp4
+
+
+
 Answer the following:
+Below is the Gist of user feedback from 2 users
 
-### What worked well about the system and what didn't?
-\*\**your answer here*\*\*
-
-### What worked well about the controller and what didn't?
-
-\*\**your answer here*\*\*
+### What worked well about the system and the controller, and what didn't?
+Conversion of user voice into a game move went well. Background noise and conversion is a little slow and sometimes not accurate, which is partially because of the way user pronuounces the words
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
 
-\*\**your answer here*\*\*
-
+The voice recognition system needs lots of testing to ensure user's accent is properly converted.
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 
-\*\**your answer here*\*\*
+Voice enabled systems needs to process lot of accents, also when the text does not match we need to build an AI model smart enough to find the nearest action. Once this is achieved, this can be used in a lot of devices, to ensure people with disability can use a lot of appliances without physical interaction. Apart from voice, we can use gesture recognition through eye movement which help disabled people.
