@@ -158,6 +158,9 @@ In the [demo directory](./demo), you will find an example Wizard of Oz project. 
 
 For Part 2, you will redesign the interaction with the speech-enabled device using the data collected, as well as feedback from part 1.
 
+![IMG_ECED4CEEB72C-1](https://user-images.githubusercontent.com/111998430/193731866-25c6db27-dee8-488d-b047-fca45bea1ad4.jpeg)
+
+
 
 ## Prep for Part 2
 
@@ -180,6 +183,8 @@ The system should:
 * use one or more sensors
 * require participants to speak to it. 
 
+
+
 *Document how the system works*
 
 <img width="1177" alt="Flowchart" src="https://user-images.githubusercontent.com/111998430/193675127-e31fc4a6-61dd-4df9-a6e0-d2cb9966acd8.png">
@@ -200,12 +205,12 @@ PIECES = [
      [0, 1],               #  *
      [1, 1]],              # **
 
-    [[0, 1],               # *
-     [1, 1],               #**
-     [1, 0]],              #*
+    [[0, 1],               #  *
+     [1, 1],               # **
+     [1, 0]],              # *
 
-    [[1, 1],               #**
-     [1, 1]]               #**
+    [[1, 1],               # **
+     [1, 1]]               # **
 ]
 
 Pieces are sub arrays where 1 represents a * and 0 represents space. Through series of spaces and stars a piece is generated.
