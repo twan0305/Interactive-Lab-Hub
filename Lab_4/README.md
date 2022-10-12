@@ -1,6 +1,10 @@
 # Ph-UI!!!
+# Team
+1. Ravi Niteesh Voleti <rv279@cornell.edu>
+2. Tony Wan <tw482@cornell.edu>
 
-For lab this week, we focus on both on sensing, to bring in new modes of input into your devices, as well as prototyping the physical look and feel of the device. You will think about the physical form the device needs to perform the sensing as well as present the display or feedback about what was sensed. 
+
+For lab this week, we focus both on sensing, to bring in new modes of input into your devices, as well as prototyping the physical look and feel of the device. You will think about the physical form the device needs to perform the sensing as well as present the display or feedback about what was sensed. 
 
 ## Part 1 Lab Preparation
 
@@ -11,7 +15,7 @@ As always, pull updates from the class Interactive-Lab-Hub to both your Pi and y
 
 ```
 pi@ixe00:~$ cd Interactive-Lab-Hub
-pi@ixe00:~/Interactive-Lab-Hub $ git pull upstream Fall2021
+pi@ixe00:~/Interactive-Lab-Hub $ git pull upstream Fall2022
 pi@ixe00:~/Interactive-Lab-Hub $ git add .
 pi@ixe00:~/Interactive-Lab-Hub $ git commit -m "get lab4 content"
 pi@ixe00:~/Interactive-Lab-Hub $ git push
@@ -150,9 +154,7 @@ Connect it to your pi with Qwiic connector and try running the example script to
 
 You can go to the [SparkFun GitHub Page](https://github.com/sparkfun/Qwiic_Joystick_Py) to learn more about the sensor!
 
-#### (Optional) Distance Sensor
-
-Note: We did not distribute this sensor to you, so if you are interested in playing with it, please come pick it up from the TA!
+#### Distance Sensor
 
 Earlier we have asked you to play with the proximity sensor, which is able to sense object within a short distance. Here, we offer [Qwiic Multi Distance Sensor](https://www.sparkfun.com/products/17072), which has a field of view of about 25° and is able to detect objects up to 3 meters away! 
 
@@ -173,11 +175,49 @@ You can go to the [SparkFun GitHub Page](https://github.com/sparkfun/Qwiic_VL53L
 
 Usually, sensors need to positioned in specific locations or orientations to make them useful for their application. Now that you've tried a bunch of the sensors, pick one that you would like to use, and an application where you use the output of that sensor for an interaction. For example, you can use a distance sensor to measure someone's height if you position it overhead and get them to stand under it.
 
+## We have tried different sensors and using the RGB sensor for our Lab.
+
 **\*\*\*Draw 5 sketches of different ways you might use your sensor, and how the larger device needs to be shaped in order to make the sensor useful.\*\*\***
+
+# Tetris Game with a Joystick
+
+<img width="515" alt="image" src="https://user-images.githubusercontent.com/111998430/195453389-563525e9-02ef-4ea3-8c0f-d90ffdf5839c.png">
+ Question: How do you accommodate clockwise and anti-clockwise movement?
+ Ans: The upside movement can be used for clockwise and the click for anti-clockwise. This breaks the user experience for a gamer.
+
+# Social distancing through distance sensor
+
+<img width="727" alt="image" src="https://user-images.githubusercontent.com/111998430/195453950-d5eb6293-67de-4c35-8130-b4b6b4780744.png">
+
+Question: It has to be smart enough to detect only humans and not other things like a pet or a bag.
+Answer: Have a camera to detect a human and then detect the distance
+
+# Adjust the blinds of a window through a rotary sensor
+![image](https://user-images.githubusercontent.com/111998430/195454274-386df7c1-4dec-4c37-844f-a52197f9e16b.png)
+
+Question: The dial movement to blind movement is dependent on the window height.
+Answer:It needs to be calculated for every window size. Needs a lot of iterations.
+
+# "Color Teller" for color blinded people through a RGB sensor
+
+<img width="631" alt="image" src="https://user-images.githubusercontent.com/111998430/195454543-8bce91b7-b0ec-45e7-b1d7-6bdb22f0a83b.png">
+
+Question: Ability to detect all types of colors
+Answers: Find the closest color .
+
+
+# Minesweeper game through capacitive sensor
+
+<img width="762" alt="image" src="https://user-images.githubusercontent.com/111998430/195454958-2f52bad5-8fb1-4b71-b8d3-e7b52cf5a734.png">
+
+Question: multiple sensors needs to be attached as we increase the difficulty of the game.
+Answers: We need to uniquely determine which sensor is touched and then design where on the sensor the touch happened
 
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
 **\*\*\*Pick one of these designs to prototype.\*\*\***
+
+### We chose the "Color Teller" for color blinded people through a RGB sensor
 
 
 ### Part D
@@ -220,15 +260,95 @@ Think about how you want to present the information about what your sensor is se
  
 **\*\*\*Sketch 5 designs for how you would physically position your display and any buttons or knobs needed to interact with it.\*\*\***
 
+## Sketch 1
+
+<img width="655" alt="image" src="https://user-images.githubusercontent.com/111998430/195456819-e8ccbd16-2d27-42e8-86c9-3c899c39aea9.png">
+
+Question: How close do we need to keep the object from the box to detect the color
+Answer: Need to test to find out
+
+## Sketch 2
+
+<img width="657" alt="image" src="https://user-images.githubusercontent.com/111998430/195456921-01dff36b-08d7-4bc6-9e44-7b4d0da47d9f.png">
+
+Question: How effective is the sensor when placed below the box. Can the sensor detect the object at an angle? is light a factor in determing the color
+
+## Sketch 3
+
+<img width="635" alt="image" src="https://user-images.githubusercontent.com/111998430/195456952-1b74fcb0-d009-4a13-bdfe-157630f792ce.png">
+
+Question: how frequently does the device needs to be charged? basically, how is the charge consumption when put in use?
+
+
+## Sketch 4
+
+<img width="657" alt="image" src="https://user-images.githubusercontent.com/111998430/195456990-00d8b980-25d9-4c16-8874-00dd288cfe61.png">
+
+Question: how close do we need to place the object from the glasses to detect the color? 
+
+
+## Sketch 5
+
+<img width="824" alt="image" src="https://user-images.githubusercontent.com/111998430/195457083-d86420cd-7455-4c8d-afad-23ce3c45205e.png">
+
+Question: how to ensure the object is the line of the sight(since it is a handheld device)
+
+
+# We chose Sketch 1
+
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
 **\*\*\*Pick one of these display designs to integrate into your prototype.\*\*\***
 
 **\*\*\*Explain the rationale for the design.\*\*\*** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
 
+The prototype can fit on a box, and need to be placed 3-5 cm away from the sensor to get accurate color. The device best works in a well lighted environment.
+
 Build a cardbord prototype of your design.
 
 **\*\*\*Document your rough prototype.\*\*\***
+
+# DOCUMENTATION
+
+Color blindness — or more accurately, poor or deficient color vision — is an inability to see the difference between certain colors. Though many people commonly use the term "color blind" for this condition, true color blindness — in which everything is seen in shades of black and white — is rare.
+
+The below image describes how a color blinded person will see an apple
+
+![image](https://user-images.githubusercontent.com/111998430/195458643-d28ef7e3-d361-4bcf-8553-9974fe990157.png)
+
+So the problem we are trying to solve is how can a color blinded person recognize the right color?
+
+## How are we solving this problem
+
+Step 1: A user brings an object close to the sensor.
+
+Step 2: the sensor detects the values of the R G B 
+
+Step 3: We use **webcolors** library to convert the R G B values to an actual name of a color
+
+Step 4: The question that arises is, what if the sensor cannot detect the right color?
+
+Step 5: We plot the R G B values of known color names in a 3D space and calculate the **Euclidean Distance** between the knowsn colors and the values captured by the sensor. We choose that color whose distance is minimum, which is essentially the "CLOSEST COLOR".
+
+![image](https://user-images.githubusercontent.com/111998430/195461549-0604cb68-528e-461d-8ee6-d19a232cfacf.png)
+
+ **(X1,Y1,Z1) are the RGB values from the sensor and (X2,Y2,Z2) are the RGB values of a known Color **
+
+## PROTOTYPE OF THE SYSTEM
+
+### How the system would look like?
+![image](https://user-images.githubusercontent.com/111998430/195461218-7f7da609-642d-4ebb-a0f1-9d0a574e2702.png)
+
+### How the system would behave?
+
+## When a cap was placed closed to the sensor
+<img width="441" alt="image" src="https://user-images.githubusercontent.com/111998430/195463706-88acf62c-4492-41fa-ba52-355eeb8a2b86.png">
+
+## Zoom-in version to show how the color is displayed on the PI
+<img width="763" alt="image" src="https://user-images.githubusercontent.com/111998430/195463747-8c37f79c-c5eb-4da0-83f1-e7759e767f69.png">
+
+The system could not find the actual color, so it finds the closest color and shows it.
+
 
 
 LAB PART 2
@@ -240,7 +360,7 @@ Following exploration and reflection from Part 1, complete the "looks like," "wo
 ### Part E (Optional)
 ### Servo Control with Joystick
 
-In the class kit, you should be able to find the [Qwiic Servo Controller](https://www.sparkfun.com/products/16773) and [Micro Servo Motor SG51](https://www.adafruit.com/product/2201). The Qwiic Servo Controller will need external power supply to drive, which we will be distributing the battery packs in the class. Connect the servo controller to the miniPiTFT through qwiic connector and connect the external battery to the 2-Pin JST port (ower port) on the servo controller. Connect your servo to channel 2 on the controller, make sure the brown is connected to GND and orange is connected to PWM.
+In the class kit, you should be able to find the [Qwiic Servo Controller](https://www.sparkfun.com/products/16773) and [Micro Servo Motor SG51](https://www.adafruit.com/product/2201). The Qwiic Servo Controller will need external power supply to drive, which are included in your kit. Connect the servo controller to the miniPiTFT through qwiic connector and connect the external battery to the 2-Pin JST port (ower port) on the servo controller. Connect your servo to channel 2 on the controller, make sure the brown is connected to GND and orange is connected to PWM.
 
 <img src="Servo_Setup.jpg" width="400"/>
 
@@ -273,4 +393,3 @@ Document all the prototypes and iterations you have designed and worked on! Agai
 * "Looks like": shows how the device should look, feel, sit, weigh, etc.
 * "Works like": shows what the device can do
 * "Acts like": shows how a person would interact with the device
-
