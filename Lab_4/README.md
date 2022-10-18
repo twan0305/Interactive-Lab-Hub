@@ -419,3 +419,10 @@ Here are some pictures for size comparisons:
 Device prototype vs iPhone 13
 ![IMG_5253 Small](https://user-images.githubusercontent.com/111993874/196327644-35ca9a9f-950a-455a-a244-7aff1593adbf.jpeg)
 
+User Test Video:
+
+
+
+https://user-images.githubusercontent.com/111993874/196333670-f6ab6765-b5c8-41b2-8d37-bd309fb8530c.mov
+
+
