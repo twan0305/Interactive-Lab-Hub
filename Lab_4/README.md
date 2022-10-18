@@ -431,3 +431,8 @@ User Test Video:
 https://user-images.githubusercontent.com/111993874/196333670-f6ab6765-b5c8-41b2-8d37-bd309fb8530c.mov
 
 
+After user testing and discussions, we can try to make this device more handheld that would allow it to be more mobile friendly. Additionally, we would incorporate an internal power source so that we may move around freely. We can also include a button that would allow the user to manual choose when to "read" a color rather than continuous active "reading."
+
+
+We would like to thank Hrudai Battini for user testing. Krishna and Brian for device and feature suggestions. 
+
