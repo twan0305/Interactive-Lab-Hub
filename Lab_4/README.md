@@ -403,17 +403,17 @@ We imagine that a user can would use the device to help move around their enviro
 
 After discussing with classmates and users, another use case suggested would be for decorators who wish to find the correct paint color. 
 
-Here is an inside view of the device prototype before putting it all together:
+Inside view of the device prototype before putting it all together:
 ![IMG_5248 Small](https://user-images.githubusercontent.com/111993874/196327447-5188f104-10f4-42bf-8558-40c1aca7bf96.jpeg)
 
-Here is an inside view of the device prototype after putting it all together:
+Inside view of the device prototype after putting it all together:
 ![IMG_5249 Small](https://user-images.githubusercontent.com/111993874/196327464-72fb425f-9580-43ed-931d-80a16ae00ac8.jpeg)
 
 
 Here is what the device prototype looks like from the outside:
 ![IMG_5250 Small](https://user-images.githubusercontent.com/111993874/196327486-8d0be03d-d24f-4879-bb22-5bbdc73774ea.jpeg)
 
-Below are pictures for size comparisons: 
+Here are some pictures for size comparisons: 
 ![IMG_5251 Small](https://user-images.githubusercontent.com/111993874/196327634-969bb44c-3f61-49d7-a07d-38fd25735425.jpeg)
 
 Device prototype vs iPhone 13
