@@ -393,3 +393,17 @@ Document all the prototypes and iterations you have designed and worked on! Agai
 * "Looks like": shows how the device should look, feel, sit, weigh, etc.
 * "Works like": shows what the device can do
 * "Acts like": shows how a person would interact with the device
+![IMG_74BA0EBE5E02-1](https://user-images.githubusercontent.com/111993874/196326903-f39393b8-9e6f-48c7-a8ab-2544738bc574.jpeg)
+
+![IMG_0665](https://user-images.githubusercontent.com/111993874/196327006-dc439170-d56d-49b3-ab4b-5b104d4d7c1e.jpg)
+
+![IMG_5248 Small](https://user-images.githubusercontent.com/111993874/196327447-5188f104-10f4-42bf-8558-40c1aca7bf96.jpeg)
+
+![IMG_5249 Small](https://user-images.githubusercontent.com/111993874/196327464-72fb425f-9580-43ed-931d-80a16ae00ac8.jpeg)
+
+![IMG_5250 Small](https://user-images.githubusercontent.com/111993874/196327486-8d0be03d-d24f-4879-bb22-5bbdc73774ea.jpeg)
+
+![IMG_5251 Small](https://user-images.githubusercontent.com/111993874/196327634-969bb44c-3f61-49d7-a07d-38fd25735425.jpeg)
+
+![IMG_5253 Small](https://user-images.githubusercontent.com/111993874/196327644-35ca9a9f-950a-455a-a244-7aff1593adbf.jpeg)
+
