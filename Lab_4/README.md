@@ -393,9 +393,16 @@ Document all the prototypes and iterations you have designed and worked on! Agai
 * "Looks like": shows how the device should look, feel, sit, weigh, etc.
 * "Works like": shows what the device can do
 * "Acts like": shows how a person would interact with the device
+
+Here we have the sketches of our prototype device for people that are blind/color blind. 
 ![IMG_74BA0EBE5E02-1](https://user-images.githubusercontent.com/111993874/196326903-f39393b8-9e6f-48c7-a8ab-2544738bc574.jpeg)
 
+
+We imagine that a user can would use the device to help move around their environment safely. For example, cross walks may be of hazard when signals are colors only. The device would be able to provide both visual and audio prompts to alert the user what the signal color is currently. 
+
 ![IMG_0665](https://user-images.githubusercontent.com/111993874/196327006-dc439170-d56d-49b3-ab4b-5b104d4d7c1e.jpg)
+
+Another use case could be for decorators who wish to find the correct paint color. 
 
 ![IMG_5248 Small](https://user-images.githubusercontent.com/111993874/196327447-5188f104-10f4-42bf-8558-40c1aca7bf96.jpeg)
 
