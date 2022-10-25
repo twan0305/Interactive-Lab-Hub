@@ -1,26 +1,31 @@
 # Observant Systems
 
 
+# Team
+1. Ravi Niteesh Voleti <rv279@cornell.edu>
+2. Tony Wan <tw482@cornell.edu>
+
+
 For lab this week, we focus on creating interactive systems that can detect and respond to events or stimuli in the environment of the Pi, like the Boat Detector we mentioned in lecture. 
 Your **observant device** could, for example, count items, find objects, recognize an event or continuously monitor a room.
 
-This lab will help you think through the design of observant systems, particularly corner cases that the algorithms needs to be aware of.
+This lab will help you think through the design of observant systems, particularly corner cases that the algorithms need to be aware of.
 
 ## Prep
 
-1.  Pull the new Github Repo.
-2.  Install VNC on your laptop if you have not yet done so. This lab will actually require you to run script on your Pi through VNC so that you can see the video stream. Please refer to the [prep for Lab 2](https://github.com/FAR-Lab/Interactive-Lab-Hub/blob/Fall2021/Lab%202/prep.md), we offered the instruction at the bottom.
+1. Spend about 10 Minutes doing the Listening exercise as described in [ListeningExercise.md](https://github.com/FAR-Lab/Interactive-Lab-Hub/blob/Fall2022/Lab%205/ListeningExercise.md)
+2.  Install VNC on your laptop if you have not yet done so. This lab will actually require you to run script on your Pi through VNC so that you can see the video stream. Please refer to the [prep for Lab 2](https://github.com/FAR-Lab/Interactive-Lab-Hub/blob/Fall2022/Lab%202/prep.md), we offered the instruction at the bottom.
 3.  Read about [OpenCV](https://opencv.org/about/), [MediaPipe](https://mediapipe.dev/), and [TeachableMachines](https://teachablemachine.withgoogle.com/).
 4.  Read Belloti, et al.'s [Making Sense of Sensing Systems: Five Questions for Designers and Researchers](https://www.cc.gatech.edu/~keith/pubs/chi2002-sensing.pdf).
 
 ### For the lab, you will need:
-
+1. Pull the new Github Repo.(Please wait until thursday morning. There are still some incompatabilities to make the assignment work.)
 1. Raspberry Pi
 1. Webcam 
-1. Microphone (if you want to have speech or sound input for your design)
 
 ### Deliverables for this lab are:
 1. Show pictures, videos of the "sense-making" algorithms you tried.
+1. Show the filledout answers for the Contextual Interaction Design Tool.
 1. Show a video of how you embed one of these algorithms into your observant system.
 1. Test, characterize your interactive device. Show faults in the detection and how the system handled it.
 
@@ -45,7 +50,7 @@ A more traditional method to extract information out of images is provided with 
 
 Most examples can be run with a screen (e.g. VNC or ssh -X or with an HDMI monitor), or with just the terminal. The examples are separated out into different folders. Each folder contains a ```HowToUse.md``` file, which explains how to run the python example. 
 
-Following is a nicer way you can run and see the flow of the `openCV-examples` we have included in your Pi. Instead of `ls`, the command we will be using here is `tree`. [Tree](http://mama.indstate.edu/users/ice/tree/) is a recursive directory colored listing command that produces a depth indented listing of files. Install `tree` first and `cd` to the `openCV-examples` folder and run the command:
+The following command is a nicer way you can run and see the flow of the `openCV-examples` we have included in your Pi. Instead of `ls`, the command we will be using here is `tree`. [Tree](http://mama.indstate.edu/users/ice/tree/) is a recursive directory colored listing command that produces a depth indented listing of files. Install `tree` first and `cd` to the `openCV-examples` folder and run the command:
 
 ```shell
 pi@ixe00:~ $ sudo apt install tree
@@ -100,6 +105,47 @@ pi@ixe00:~/openCV-examples/object-detection $ python detect.py
 
 **\*\*\*Try each of the following four examples in the `openCV-examples`, include screenshots of your use and write about one design for each example that might work based on the individual benefits to each algorithm.\*\*\***
 
+#### Filtering, FFTs, and Time Series data. 
+Additional filtering and analysis can be done on the sensors that were provided in the kit. For example, running a Fast Fourier Transform over the IMU or Microphone data stream could create a simple activity classifier between walking, running, and standing.
+
+To get the microphone working we need to install two libraries. `PyAudio` to get the data from the microphone, `sciPy` to make data analysis easy, and the `numpy-ringbuffer` to keep track of the last ~1 second of audio. 
+Pyaudio needs to be installed with the following comand:
+``sudo apt install python3-pyaudio``
+SciPy is installed with 
+``sudo apt install python3-scipy`` 
+
+Lastly we need numpy-ringbuffer, to make continues data anlysis easier.
+``pip install numpy-ringbuffer``
+
+Now try the audio processing example:
+* Find what ID the micrpohone has with `python ListAvalibleAudioDevices.py`
+    Look for a device name that includes `USB` in the name.
+* Adjust the variable `DEVICE_INDEX` in the `ExampleAudioFFT.py` file.
+    See if you are getting results printed out from the microphone. Try to understand how the code works.
+    Then run the file by typing `python ExampleAudioFFT.py`
+
+
+
+Using the microphone, try one of the following:
+
+**1. Set up threshold detection** Can you identify when a signal goes above certain fixed values?
+
+**2. Set up a running averaging** Can you set up a running average over one of the variables that are being calculated.[moving average](https://en.wikipedia.org/wiki/Moving_average)
+
+**3. Set up peak detection** Can you identify when your signal reaches a peak and then goes down?
+
+For technical references:
+
+* Volume Calculation with [RootMeanSqare](https://en.wikipedia.org/wiki/Root_mean_square)
+* [RingBuffer](https://en.wikipedia.org/wiki/Circular_buffer)
+* [Frequency Analysis](https://en.wikipedia.org/wiki/Fast_Fourier_transform)
+
+
+**\*\*\*Include links to your code here, and put the code for these in your repo--they will come in handy later.\*\*\***
+
+### (Optional Reading) Introducing Additional Concepts
+The following sections ([MediaPipe](#mediapipe) and [Teachable Machines](#teachable-machines)) are included for your own optional learning. **The associated scripts will not work on Fall 2022's Pi Image, so you can move onto part B.** However, you are welcome to try it on your personal computer. If this functionality is desirable for your lab or final project, we can help you get a different image running the last OS and version of python to make the following code work.
+
 #### MediaPipe
 
 A more recent open source and efficient method of extracting information from video streams comes out of Google's [MediaPipe](https://mediapipe.dev/), which offers state of the art face, face mesh, hand pose, and body pose detection.
@@ -119,8 +165,8 @@ and install the following.
 ```
 ...
 (mpipe) pi@ixe00:~ $ sudo apt install ffmpeg python3-opencv
-(mpipe) pi@ixe00:~ $ sudo apt install libxcb-shm0 libcdio-paranoia-dev libsdl2-2.0-0 libxv1  libtheora0 libva-drm2 libva-x11-2 libvdpau1 libharfbuzz0b libbluray2 libatlas-base-dev libhdf5-103 libgtk-3-0 libdc1394-22 libopenexr23
-(mpipe) pi@ixe00:~ $ pip3 install mediapipe-rpi4 pyalsaaudio
+(mpipe) pi@ixe00:~ $ sudo apt install libxcb-shm0 libcdio-paranoia-dev libsdl2-2.0-0 libxv1  libtheora0 libva-drm2 libva-x11-2 libvdpau1 libharfbuzz0b libbluray2 libatlas-base-dev libhdf5-103 libgtk-3-0 libdc1394-22 libopenexr25
+(mpipe) pi@ixe00:~ $ pip3 install mediapipe-rpi3 pyalsaaudio
 ```
 
 Each of the installs will take a while, please be patient. After successfully installing mediapipe, connect your webcam to your Pi and use **VNC to access to your Pi**, open the terminal, and go to Lab 5 folder and run the hand pose detection script we provide:
@@ -134,7 +180,7 @@ Each of the installs will take a while, please be patient. After successfully in
 
 Try the two main features of this script: 1) pinching for percentage control, and 2) "[Quiet Coyote](https://www.youtube.com/watch?v=qsKlNVpY7zg)" for instant percentage setting. Notice how this example uses hardcoded positions and relates those positions with a desired set of events, in `hand_pose.py` lines 48-53. 
 
-**\*\*\*Consider how you might use this position based approach to create an interaction, and write how you might use it on either face, hand or body pose tracking.\*\*\***
+~~\*\*\*Consider how you might use this position based approach to create an interaction, and write how you might use it on either face, hand or body pose tracking.\*\*\*~~
 
 (You might also consider how this notion of percentage control with hand tracking might be used in some of the physical UI you may have experimented with in the last lab, for instance in controlling a servo or rotary encoder.)
 
@@ -170,65 +216,71 @@ This might take a while to get fully installed. After installation, connect your
 
 (**Optionally**: You can train your own model, too. First, visit [TeachableMachines](https://teachablemachine.withgoogle.com/train), select Image Project and Standard model. Second, use the webcam on your computer to train a model. For each class try to have over 50 samples, and consider adding a background class where you have nothing in view so the model is trained to know that this is the background. Then create classes based on what you want the model to classify. Lastly, preview and iterate, or export your model as a 'Tensorflow' model, and select 'Keras'. You will find an '.h5' file and a 'labels.txt' file. These are included in this labs 'teachable_machines' folder, to make the PPE model you used earlier. You can make your own folder or replace these to make your own classifier.)
 
-**\*\*\*Whether you make your own model or not, include screenshots of your use of Teachable Machines, and write how you might use this to create your own classifier. Include what different affordances this method brings, compared to the OpenCV or MediaPipe options.\*\*\***
+~~**\*\*\*Whether you make your own model or not, include screenshots of your use of Teachable Machines, and write how you might use this to create your own classifier. Include what different affordances this method brings, compared to the OpenCV or MediaPipe options.\*\*\***~~
 
 
 *Don't forget to run ```deactivate``` to end the Teachable Machines demo, and to reactivate with ```source tmachine/bin/activate``` when you want to use it again.*
 
 
-#### Filtering, FFTs, and Time Series data. (optional)
-Additional filtering and analysis can be done on the sensors that were provided in the kit. For example, running a Fast Fourier Transform over the IMU data stream could create a simple activity classifier between walking, running, and standing.
-
-Using the accelerometer, try the following:
-
-**1. Set up threshold detection** Can you identify when a signal goes above certain fixed values?
-
-**2. Set up averaging** Can you average your signal in N-sample blocks? N-sample running average?
-
-**3. Set up peak detection** Can you identify when your signal reaches a peak and then goes down?
-
-**\*\*\*Include links to your code here, and put the code for these in your repo--they will come in handy later.\*\*\***
-
-
 ### Part B
 ### Construct a simple interaction.
 
-Pick one of the models you have tried, pick a class of objects, and experiment with prototyping an interaction.
-This can be as simple as the boat detector earlier.
-Try out different interaction outputs and inputs.
+* Pick one of the models you have tried, and experiment with prototyping an interaction.
+* This can be as simple as the boat detector showen in a previous lecture from Nikolas Matelaro.
+* Try out different interaction outputs and inputs.
+* Fill out the ``Contextual Interaction Design Tool`` sheet.[Found here.](ThinkingThroughContextandInteraction.png)
 
 **\*\*\*Describe and detail the interaction, as well as your experimentation here.\*\*\***
+
+The model we tried out is object detection and the class of objects we tried out was "gestures".Sign language is one of the methods in non-verbal communication and usually used by deaf people who can not speak. Although knowing the sign languages is very important for communication, many people do not know so this situation makes the lives of deaf people harder. So in this interaction, we will implement a real-time system which recognizes the American sign language alphabets and convert into english words.
 
 ### Part C
 ### Test the interaction prototype
 
 Now flight test your interactive prototype and **note down your observations**:
 For example:
-1. When does it what it is supposed to do?
-1. When does it fail?
-1. When it fails, why does it fail?
-1. Based on the behavior you have seen, what other scenarios could cause problems?
+1. When does it what it is supposed to do? - The system is supposed to recognize the sign language alphabets and convert into english words.
+1. When does it fail? - When the surroundings are dark 
+1. When it fails, why does it fail? - we will not be able to effectively recognize the gesture thereby fails to predict the words accurately
+1. Based on the behavior you have seen, what other scenarios could cause problems? - If the gesture is not accurate it may predict the wrong alphabet.
 
 **\*\*\*Think about someone using the system. Describe how you think this will work.\*\*\***
-1. Are they aware of the uncertainties in the system?
-1. How bad would they be impacted by a miss classification?
-1. How could change your interactive system to address this?
-1. Are there optimizations you can try to do on your sense-making algorithm.
+1. Are they aware of the uncertainties in the system? 
+2. How bad would they be impacted by a miss classification? Misinterpretation of the gesture may throw off the actual information being convyed. However, 
+3. How could change your interactive system to address this? We can continue to upgrade the system and incorporate new gestures. 
+4. Are there optimizations you can try to do on your sense-making algorithm.
+
+The users are aware of the uncertainties in the system as well and the inconvenience caused by bad light. Addtionally, sign language also has their own "dialects" which may have different gestures therefore, the system may not recognize some less standard gestures.  The impact is not much, as it may take multiple iterations to recognize. The impact of the unknown gestures would be limited, since humans also use context to understand phrases/words and in this case gestures. Overall With extensive training of the model this issue can be addressed. For example we can for machine learning through user engagement, i.e. allow users to upload new gestures with definitions that will be subjected to verification.
 
 ### Part D
 ### Characterize your own Observant system
 
 Now that you have experimented with one or more of these sense-making systems **characterize their behavior**.
 During the lecture, we mentioned questions to help characterize a material:
-* What can you use X for?
-* What is a good environment for X?
-* What is a bad environment for X?
-* When will X break?
-* When it breaks how will X break?
-* What are other properties/behaviors of X?
-* How does X feel?
+* What can you use X for? Improved communication between deaf and non-deaf population
+* What is a good environment for X? When the background is stationery and well lit
+* What is a bad environment for X? When the background is in motion and dim
+* When will X break? When user is captured in low/dim light conditions / if user gestures are done too fast
+* When it breaks how will X break? It does not break completely, it will just take longer to translate gesture. Or it does not provide translation
+* What are other properties/behaviors of X? It can predict the right words in case of the spelling of the word is wrong. 
+* How does X feel? It feels light and can be mobile.  
 
 **\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
+
+https://user-images.githubusercontent.com/111993874/197663414-afc4bc23-8fb4-4da0-b505-0a23d1c85170.MOV
+
+
+https://user-images.githubusercontent.com/111993874/197663422-b337a7be-bdb4-40f3-af86-e9a006fd2e92.MOV
+
+
+https://user-images.githubusercontent.com/111993874/197663461-9098b46f-08f8-4338-8767-91c6093cf242.MOV
+
+
+https://user-images.githubusercontent.com/111993874/197663479-2ea34b71-c272-4c4b-9560-59ecaee65de6.MOV
+
+
+
+
 
 ### Part 2.
 
