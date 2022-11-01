@@ -287,3 +287,19 @@ https://user-images.githubusercontent.com/111993874/197663479-2ea34b71-c272-4c4b
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
 
 **\*\*\*Include a short video demonstrating the finished result.\*\*\***
+
+The System basically captures the sign , uses Machine learning model CNN to predict a letter and show it. below are the steps:
+
+####Convolutional Neural Network(CNN)
+Unlike regular Neural Networks, in the layers of CNN, the neurons are arranged in 3 dimensions: width, height, depth.
+
+The neurons in a layer will only be connected to a small region of the layer (window size) before it, instead of all of the neurons in a fully-connected manner.
+
+Moreover, the final output layer would have dimensions(number of classes), because by the end of the CNN architecture we will reduce the full image into a single vector of class scores.
+
+![image](https://user-images.githubusercontent.com/111998430/199134904-f48ed5c4-fb81-4dee-9cc7-539ac5b17a88.png)
+
+
+
+https://user-images.githubusercontent.com/111998430/199133823-e90b36d2-6b22-4999-8317-e5e625d07546.mp4
+
