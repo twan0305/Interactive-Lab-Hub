@@ -303,3 +303,4 @@ Moreover, the final output layer would have dimensions(number of classes), becau
 
 https://user-images.githubusercontent.com/111998430/199133823-e90b36d2-6b22-4999-8317-e5e625d07546.mp4
 
+ 
