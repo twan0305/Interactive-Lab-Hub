@@ -140,6 +140,20 @@ The idea is the detect when a patient accidentally falls from their bed and info
 
 <img width="603" alt="Screenshot 2022-11-07 at 10 54 42 PM" src="https://user-images.githubusercontent.com/111998430/200471444-fdb88632-8a01-480f-bede-fbb538f8a31b.png">
 
+### 5. Military Hands
+The idea is that in certain combat enviroments i.e. reconnaissance, silence is a must. Communication with your unit is through standardized hand signals. Our device would be able to recognize the hand signals and give a verbal cues to the rest of the team. 
+
+### Military hand shake
+
+<img width="440" alt="Screenshot 2022-11-08 at 12 35 22 AM" src="https://user-images.githubusercontent.com/111998430/200483569-29b11af8-d05a-43f5-ba1e-a139c69c4d86.png">
+
+### Signalling 
+
+<img width="429" alt="Screenshot 2022-11-08 at 12 35 28 AM" src="https://user-images.githubusercontent.com/111998430/200483579-e5847347-a987-4aec-81c3-ed9cb3268c9a.png">
+
+### Army to react for the signal
+
+<img width="417" alt="Screenshot 2022-11-08 at 12 35 35 AM" src="https://user-images.githubusercontent.com/111998430/200483587-8a45bc7f-a541-479e-bb4c-329b17480db7.png">
 
 
 ### Part C
