@@ -91,6 +91,57 @@ Once connected, you should be able to see all the messages under the IDD topic. 
 
 **\*\*\*Consider how you might use this messaging system on interactive devices, and draw/write down 5 ideas here.\*\*\***
 
+### 1. Safe Driving Alert System: 
+Our Idea is to ensure that the driver uses both his hands while driving. This system will send an alert to the family if the family member drives with a single hand for a specific amount of time or more. To achieve it, We setup 2 touch sensors on the steering wheel, as the driver keeps using both the hands the sensors keeps receiving data. When one hand is removed for a specific amount of time, one of the sensors does not return data. This will trigger an alert to the family.
+
+### Driving with both the hands
+<img width="573" alt="Screenshot 2022-11-07 at 10 35 36 PM" src="https://user-images.githubusercontent.com/111998430/200469666-3ac873b5-a746-4ad8-851c-f0aac3ee55cd.png">
+
+### Driving with a single hand
+
+<img width="576" alt="Screenshot 2022-11-07 at 10 35 47 PM" src="https://user-images.githubusercontent.com/111998430/200469665-77891c36-979f-4d0f-9ec9-72f32a39a78f.png">
+
+### Family receives an alert!
+
+<img width="567" alt="Screenshot 2022-11-07 at 10 36 02 PM" src="https://user-images.githubusercontent.com/111998430/200469662-562d3e22-3da3-4fd6-a2d1-755290cdb18c.png">
+
+
+
+### 2. EarthQuake Detection System
+The idea of this system is to alert all the people in the region before a potential earthquake.Here we setup a device with an accelerometer sensor and place it outside the house. The device keeps receving data and an overall accelaration is calculated. If this value is more than the threshold the system would trigger a high priority alert to all the people, which will help them evacuate during a potential earthquake.
+
+<img width="532" alt="Screenshot 2022-11-07 at 10 41 46 PM" src="https://user-images.githubusercontent.com/111998430/200470319-1b595718-8d4b-4b13-9e36-a60ef2240264.png">
+
+### 3. Trepasser Detection
+
+The idea of this system is to alert the residents of the house when an intruder tries to enter into a house. To achieve this we build a device using a distance sensor which keeps track of the moving objects near the house. If an object keeps coming close and crosses the threshold limit a burglar alert is triggered.
+
+### When an unknown person tries to come close to the house
+<img width="577" alt="Screenshot 2022-11-07 at 10 47 39 PM" src="https://user-images.githubusercontent.com/111998430/200470655-3107c117-bc55-4ede-812c-b8070401ceaa.png">
+
+### An alert is sent to the residents
+
+<img width="554" alt="Screenshot 2022-11-07 at 10 48 20 PM" src="https://user-images.githubusercontent.com/111998430/200470733-1e51cfc4-8228-4ccf-a99f-345bf2ad6795.png">
+
+
+### 4. Patient fall detection in a hospital
+
+The idea is the detect when a patient accidentally falls from their bed and inform the hosiptal staff about the incident. We will use a touch sensor and place it under the bed of the patient. As long as the patient is on the bed there is a constant touch and sensor keep detecting the patient. When they accidentally fall off the sensor does not detect a touch and will send an alert to the hospital staff.
+
+### Patient sleeps on the bed with the sensor
+
+<img width="632" alt="Screenshot 2022-11-07 at 10 54 17 PM" src="https://user-images.githubusercontent.com/111998430/200471448-149035be-10ff-4fc8-9422-a3325284fc76.png">
+
+### When a patient falls off
+
+<img width="614" alt="Screenshot 2022-11-07 at 10 54 30 PM" src="https://user-images.githubusercontent.com/111998430/200471446-3cf6097d-2700-478e-82e8-f7e7eca4406e.png">
+
+### Hospital staff notified
+
+<img width="603" alt="Screenshot 2022-11-07 at 10 54 42 PM" src="https://user-images.githubusercontent.com/111998430/200471444-fdb88632-8a01-480f-bede-fbb538f8a31b.png">
+
+
+
 ### Part C
 ### Streaming a Sensor
 
