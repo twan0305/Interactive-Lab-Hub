@@ -1,5 +1,10 @@
 # Little Interactions Everywhere
 
+
+# Team
+1. Ravi Niteesh Voleti <rv279@cornell.edu>
+2. Tony Wan <tw482@cornell.edu>
+
 ## Prep
 
 1. Pull the new changes from the class interactive-lab-hub. (You should be familiar with this already!)
@@ -106,6 +111,8 @@ Plug in the capacitive sensor board with the Qwiic connector. Use the alligator 
  ```
 
 **\*\*\*Include a picture of your setup here: what did you see on MQTT Explorer?\*\*\***
+![image](https://user-images.githubusercontent.com/111998430/200370650-37ffac66-7991-4cc6-bd58-3f497ac18552.png)
+
 
 **\*\*\*Pick another part in your kit and try to implement the data streaming with it.\*\*\***
 
@@ -148,12 +155,33 @@ Of course not! You can go to [https://one-true-colornet.glitch.me/](https://one-
 Find at least one class (more are okay) partner, and design a distributed application together based on the exercise we asked you to do in this lab.
 
 **\*\*\*1. Explain your design\*\*\*** For example, if you made a remote controlled banana piano, explain why anyone would want such a thing.
+We are making a seismograph with a three axis accelerometer. A seismograph will detect seismic changes and will alert all the clients about an earthquake.
 
 **\*\*\*2. Diagram the architecture of the system.\*\*\*** Be clear to document where input, output and computation occur, and label all parts and connections. For example, where is the banana, who is the banana player, where does the sound get played, and who is listening to the banana music?
 
+![image](https://user-images.githubusercontent.com/111998430/200377005-b430d97b-2657-4cd5-9ef5-79dc38c6898b.png)
+
+
 **\*\*\*3. Build a working prototype of the system.\*\*\*** Do think about the user interface: if someone encountered these bananas somewhere in the wild, would they know how to interact with them? Should they know what to expect?
+
+The user would not need to know anything about the system. it is designed to alert the user and no explicit interaction is needed.
 
 **\*\*\*4. Document the working prototype in use.\*\*\*** It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location.
 
 <!--**\*\*\*5. BONUS (Wendy didn't approve this so you should probably ignore it)\*\*\*** get the whole class to run your code and make your distributed system BIGGER.-->
 
+### DEFINITION
+An accelerometer is a device that measures the vibration, or acceleration of motion of a structure. The force caused by vibration or a change in motion (acceleration) causes the mass to "squeeze" the piezoelectric material which produces an electrical charge that is proportional to the force exerted upon it. Since the charge is proportional to the force, and the mass is a constant, then the charge is also proportional to the acceleration.
+
+### How does it work?
+
+An accelerometer works using an electromechanical sensor that is designed to measure either static or dynamic acceleration. Static acceleration is the constant force acting on a body, like gravity or friction. These forces are predictable and uniform to a large extend. For example, the acceleration due to gravity is constant at 9.8m/s, and the gravitation force is almost the same at every point on earth.
+
+Dynamic acceleration forces are non-uniform, and the best example is vibration or shock. A car crash is an excellent example of dynamic acceleration. Here, the acceleration change is sudden when compared to its previous state. The theory behind accelerometers is that they can detect acceleration and convert it into measurable quantities like electrical signals.
+
+Calculate the total accelaration using the below formula.
+![image](https://user-images.githubusercontent.com/111998430/200390886-03c76c34-67d9-47a3-b815-6f6000a321d8.png)
+ if the total accelaration is above a threshold, it means there is seismic activity.
+
+
+https://user-images.githubusercontent.com/111998430/200440264-c5226eb4-740c-4231-86e6-6a136c9c437a.mp4
